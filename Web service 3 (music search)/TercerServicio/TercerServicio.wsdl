@@ -1,0 +1,205 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://TercerServicio" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" targetNamespace="http://TercerServicio">
+<wsdl:types>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://TercerServicio">
+<xs:element name="setCancion">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="setArtista">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="setAlbum">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getBusqueda">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="getBusquedaResponse">
+<xs:complexType>
+<xs:sequence>
+<xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="getBusquedaRequest">
+<wsdl:part name="parameters" element="ns:getBusqueda"/>
+</wsdl:message>
+<wsdl:message name="getBusquedaResponse">
+<wsdl:part name="parameters" element="ns:getBusquedaResponse"/>
+</wsdl:message>
+<wsdl:message name="setAlbumRequest">
+<wsdl:part name="parameters" element="ns:setAlbum"/>
+</wsdl:message>
+<wsdl:message name="setAlbumResponse"/>
+<wsdl:message name="setCancionRequest">
+<wsdl:part name="parameters" element="ns:setCancion"/>
+</wsdl:message>
+<wsdl:message name="setCancionResponse"/>
+<wsdl:message name="setArtistaRequest">
+<wsdl:part name="parameters" element="ns:setArtista"/>
+</wsdl:message>
+<wsdl:message name="setArtistaResponse"/>
+<wsdl:portType name="ServicioMusicalPortType">
+<wsdl:operation name="getBusqueda">
+<wsdl:input message="ns:getBusquedaRequest" wsaw:Action="urn:getBusqueda"/>
+<wsdl:output message="ns:getBusquedaResponse" wsaw:Action="urn:getBusquedaResponse"/>
+</wsdl:operation>
+<wsdl:operation name="setAlbum">
+<wsdl:input message="ns:setAlbumRequest" wsaw:Action="urn:setAlbum"/>
+<wsdl:output message="ns:setAlbumResponse" wsaw:Action="urn:setAlbumResponse"/>
+</wsdl:operation>
+<wsdl:operation name="setCancion">
+<wsdl:input message="ns:setCancionRequest" wsaw:Action="urn:setCancion"/>
+<wsdl:output message="ns:setCancionResponse" wsaw:Action="urn:setCancionResponse"/>
+</wsdl:operation>
+<wsdl:operation name="setArtista">
+<wsdl:input message="ns:setArtistaRequest" wsaw:Action="urn:setArtista"/>
+<wsdl:output message="ns:setArtistaResponse" wsaw:Action="urn:setArtistaResponse"/>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ServicioMusicalSoap11Binding" type="ns:ServicioMusicalPortType">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="getBusqueda">
+<soap:operation soapAction="urn:getBusqueda" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setAlbum">
+<soap:operation soapAction="urn:setAlbum" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setCancion">
+<soap:operation soapAction="urn:setCancion" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setArtista">
+<soap:operation soapAction="urn:setArtista" style="document"/>
+<wsdl:input>
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="ServicioMusicalSoap12Binding" type="ns:ServicioMusicalPortType">
+<soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="getBusqueda">
+<soap12:operation soapAction="urn:getBusqueda" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setAlbum">
+<soap12:operation soapAction="urn:setAlbum" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setCancion">
+<soap12:operation soapAction="urn:setCancion" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setArtista">
+<soap12:operation soapAction="urn:setArtista" style="document"/>
+<wsdl:input>
+<soap12:body use="literal"/>
+</wsdl:input>
+<wsdl:output>
+<soap12:body use="literal"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:binding name="ServicioMusicalHttpBinding" type="ns:ServicioMusicalPortType">
+<http:binding verb="POST"/>
+<wsdl:operation name="getBusqueda">
+<http:operation location="getBusqueda"/>
+<wsdl:input>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setAlbum">
+<http:operation location="setAlbum"/>
+<wsdl:input>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setCancion">
+<http:operation location="setCancion"/>
+<wsdl:input>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="setArtista">
+<http:operation location="setArtista"/>
+<wsdl:input>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:input>
+<wsdl:output>
+<mime:content type="application/xml" part="parameters"/>
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ServicioMusical">
+<wsdl:port name="ServicioMusicalHttpSoap11Endpoint" binding="ns:ServicioMusicalSoap11Binding">
+<soap:address location="http://localhost:8080/axis2/services/ServicioMusical.ServicioMusicalHttpSoap11Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="ServicioMusicalHttpSoap12Endpoint" binding="ns:ServicioMusicalSoap12Binding">
+<soap12:address location="http://localhost:8080/axis2/services/ServicioMusical.ServicioMusicalHttpSoap12Endpoint/"/>
+</wsdl:port>
+<wsdl:port name="ServicioMusicalHttpEndpoint" binding="ns:ServicioMusicalHttpBinding">
+<http:address location="http://localhost:8080/axis2/services/ServicioMusical.ServicioMusicalHttpEndpoint/"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

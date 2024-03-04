@@ -1,0 +1,9 @@
+1. El servicio 3, o servicio musical, permite realizar una busqueda de canciones por su título (opcion 1), por el album al que pertenecen (opcion 2) o por su artista (opcion 3).
+
+2. Posee 3 funciones set (void), segun el tipo de busqueda: setCancion(String cancion), setAlbum(String Album) y setArtista(String Artista); y una cuarta funcion para obtener los resultados: String getBusqueda(String tipo_busqueda)
+
+3. A través de la URL https://itunes.apple.com/search?parameterkeyvalue se nos permite realizar la busqueda. Dicha busqueda devuelve los resultados en un Json
+
+4. Se ha usado en el servicio la libreria javax.json(version 1.1.4) para procesar el Json, pasarlo a JsonArray y obtener los resultados de interes. Para que funcionase en tomcat correctamente, se debió añadir al directorio apache-tomcat-7.0.108\webapps\axis2\WEB-INF\lib
+
+5. El siguiente link desarrolla las diferentes maneras en que se pueden realizar busquedas a través de la URL mencionada: https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/
